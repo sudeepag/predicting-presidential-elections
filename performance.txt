@@ -1,0 +1,60 @@
+We can test the performance of various untuned models using a 10-fold cross validation on the training data. Since we are classifying numerical features into two categories we explore the following models.
+Testing performance of machine learning models: Decision Tree, Kernel SVM, Random Forest, kNN...
+
+Running 10-fold cross validation with decision tree classifier.
+Scores: [ 0.76229508  0.74590164  0.76229508  0.71311475  0.79338843  0.76859504
+  0.79338843  0.75206612  0.66942149  0.71666667]
+Time taken: 0.729986s
+The decision tree classifier results in an average accuracy of 74.771327% with 10-fold cross validation.
+
+Running 10-fold cross validation with kernel SVM classifier.
+Scores: [ 0.77868852  0.77868852  0.77868852  0.77868852  0.78512397  0.78512397
+  0.78512397  0.78512397  0.78512397  0.78333333]
+Time taken: 1.795374s
+The rbf support vector machine classifier results in an average accuracy of 78.237073% with 10-fold cross validation.
+
+Running 10-fold cross validation with random forest classifier.
+Scores: [ 0.77868852  0.81967213  0.76229508  0.78688525  0.84297521  0.87603306
+  0.8677686   0.76859504  0.75206612  0.73333333]
+Time taken: 1.106542s
+The random forest classifier results in an average accuracy of 79.883123% with 10-fold cross validation.
+
+Running 10-fold cross validation with kNN classifier.
+Scores: [ 0.77868852  0.80327869  0.78688525  0.75409836  0.81818182  0.81818182
+  0.81818182  0.78512397  0.69421488  0.775     ]
+Time taken: 0.556334s
+The kNN classifier results in an average accuracy of 78.318351% with 10-fold cross validation.
+
+Using grid search before feature engineering to find optimal hyperparameters.
+GridSearchCV took 220.34 seconds for 216 candidate parameter settings.
+Model with rank: 1
+Mean validation score: 0.831 (std: 0.019)
+Parameters: {'max_depth': None, 'min_samples_split': 2, 'oob_score': True, 'min_samples_leaf': 3, 'criterion': 'gini', 'max_features': 1}
+Model with rank: 1
+Mean validation score: 0.831 (std: 0.019)
+Parameters: {'max_depth': None, 'min_samples_split': 2, 'oob_score': False, 'min_samples_leaf': 3, 'criterion': 'gini', 'max_features': 1}
+Model with rank: 1
+Mean validation score: 0.831 (std: 0.019)
+Parameters: {'max_depth': None, 'min_samples_split': 3, 'oob_score': True, 'min_samples_leaf': 3, 'criterion': 'gini', 'max_features': 1}
+Model with rank: 1
+Mean validation score: 0.831 (std: 0.019)
+Parameters: {'max_depth': None, 'min_samples_split': 3, 'oob_score': False, 'min_samples_leaf': 3, 'criterion': 'gini', 'max_features': 1}
+
+Using grid search after feature engineering to find optimal hyperparameters.
+GridSearchCV took 236.53 seconds for 216 candidate parameter settings.
+Model with rank: 1
+Mean validation score: 0.834 (std: 0.018)
+Parameters: {'max_depth': None, 'min_samples_split': 10, 'oob_score': True, 'min_samples_leaf': 1, 'criterion': 'entropy', 'max_features': 3}
+Model with rank: 1
+Mean validation score: 0.834 (std: 0.018)
+Parameters: {'max_depth': None, 'min_samples_split': 10, 'oob_score': False, 'min_samples_leaf': 1, 'criterion': 'entropy', 'max_features': 3}
+Model with rank: 3
+Mean validation score: 0.833 (std: 0.028)
+Parameters: {'max_depth': None, 'min_samples_split': 10, 'oob_score': True, 'min_samples_leaf': 1, 'criterion': 'entropy', 'max_features': 1}
+Model with rank: 3
+Mean validation score: 0.833 (std: 0.028)
+Parameters: {'max_depth': None, 'min_samples_split': 10, 'oob_score': False, 'min_samples_leaf': 1, 'criterion': 'entropy', 'max_features': 1}
+
+Training optimal model with tuned hyperparameters.
+Time taken: 28.240110s
+Model trained and stored in file model.pkl

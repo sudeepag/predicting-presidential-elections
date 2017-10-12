@@ -1,0 +1,20 @@
+A number of additional comments are commented within my code.
+
+To train and test the performance of the models, I used sklearn. I decided to test the following models due to the nature of the dataset.
+
+1) Decision trees
+2) SVM
+3) Random forest
+4) kNN
+
+The characteristics of the assignment that I assessed in order to pick these models are
+
+1) Size of dataset
+2) Type of features (in this case we have all numerical features)
+3) Classification
+4) Output of classification (two categories)
+5) Time available for assignment
+
+For feature engineering, I attempted to normalize any features that were proportions or multipliers in order to standardize their values across the different counties. For example, since population growth is a function of total population, the actual change in population is a more informative feature. Performing this feature engineering allowed us to see an increase in the accuracy of the model (as well as a lower std in the cross validation)
+
+Due to lack of time and processing power, I was not able to test the performance of linear SVM. I'd also like to have trained a multi-layer perceptron neural network and compare the results with what I got using the models I used.
